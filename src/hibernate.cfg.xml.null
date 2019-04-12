@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 1、数据库信息 5个  必填的 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/crm_32</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">ago1051233525</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- 2、hibernate信息  可选的 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- 代表的没有表就会创建，有的话就会更新表(不会删除任何数据) -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 3、引入映射文件 -->
+		<mapping resource="com/ahead/domain/customer.hbm.xml"/>
+		<mapping resource="com/ahead/domain/linkman.hbm.xml"/>
+		<mapping resource="com/ahead/domain/user.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
